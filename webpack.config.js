@@ -1,15 +1,21 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const mode = "development";
-if (process.env.NODE_ENV === "production") {
-    mode = "production";
-}
+const mode =
+    process.env.NODE_ENV === "production" ? "production" : "development";
 
 module.exports = {
     mode,
     devtool: "source-map",
     devServer: {
         static: "./dist",
+    },
+    output: {
+        filename: "js/main.js",
+        path: path.resolve(__dirname, "dist"),
+        assetModuleFilename: "img/[name][ext]",
+        clean: true,
     },
     module: {
         rules: [
@@ -19,12 +25,15 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env"],
+                        presets: [
+                            "@babel/preset-env",
+                            ["@babel/preset-react", { runtime: "automatic" }],
+                        ],
                     },
                 },
             },
             {
-                test: /\.css$/i,
+                test: /\.s?css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
@@ -36,9 +45,28 @@ module.exports = {
                             },
                         },
                     },
+                    "sass-loader",
                 ],
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: "@svgr/webpack",
+                    },
+                ],
+            },
+            {
+                test: /\.png$/,
+                type: "asset/resource",
             },
         ],
     },
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin({ filename: "css/[name].css" }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+            favicon: "./src/favicon.ico",
+        }),
+    ],
 };
