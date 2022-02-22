@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn init
+
+PATH: 
+  /usr/local/heroku/bin:/home/MiCetF/bin:/home/MiCetF/.local/bin:/usr/local/heroku/bin:/home/MiCetF/.rvm/gems/ruby-2.4.3/bin:/home/MiCetF/.rvm/gems/ruby-2.4.3@global/bin:/home/MiCetF/.rvm/rubies/ruby-2.4.3/bin:/home/MiCetF/bin:/home/MiCetF/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/MiCetF/.rvm/bin:/home/MiCetF/.yarn/bin:/home/MiCetF/Android/Sdk/tools:/home/MiCetF/Android/Sdk/platform-tools:/home/MiCetF/.rvm/bin:/home/MiCetF/.rvm/bin:/home/MiCetF/.yarn/bin:/home/MiCetF/Android/Sdk/tools:/home/MiCetF/Android/Sdk/platform-tools:/home/MiCetF/.rvm/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:137008:13)
+      at Interface.emit (events.js:310:20)
+      at Interface._ttyWrite (readline.js:893:16)
+      at ReadStream.onkeypress (readline.js:198:10)
+      at ReadStream.emit (events.js:310:20)
+      at emitKeys (internal/readline/utils.js:438:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1160:36)
+      at ReadStream.emit (events.js:310:20)
+      at addChunk (_stream_readable.js:286:12)
+
+npm manifest: 
+  {
+      "name": "prodecrits",
+      "version": "1.0.0",
+      "description": "Portail d'accès à des ressources en ligne pour favoriser l'apprentissage de la production d'écrits à l'école primaire.",
+      "main": "src/index.js",
+      "scripts": {
+          "start": "webpack serve --open",
+          "build-dev": "webpack",
+          "build": "NODE_ENV=production webpack"
+      },
+      "keywords": [],
+      "author": "Frédéric MISERY <webmaster@micetf.fr> (https://micetf.fr/)",
+      "license": "MIT",
+      "devDependencies": {
+          "@babel/core": "^7.17.5",
+          "@babel/preset-env": "^7.16.11",
+          "babel-loader": "^8.2.3",
+          "css-loader": "^6.6.0",
+          "mini-css-extract-plugin": "^2.5.3",
+          "webpack": "^5.69.1",
+          "webpack-cli": "^4.9.2",
+          "webpack-dev-server": "^4.7.4"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
