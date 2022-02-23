@@ -15,15 +15,15 @@ export default ({
     right = [] /*  = [<button className="btn btn-secondary my-1 mx-1">Right</button>] */,
 }) => {
     return (
-        <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <nav className="navbar fixed-top navbar-expand-md navbar-dark bg-dark px-3">
             <a className="navbar-brand" href={path}>
                 MiCetF
             </a>
             <button
                 className="navbar-toggler"
                 type="button"
-                data-toggle="collapse"
-                data-target="#navbarToggle"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarToggle"
                 aria-controls="navbarToggle"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
